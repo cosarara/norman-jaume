@@ -1,0 +1,19 @@
+// copy to /usr/share/X11/xkb/symbols/jaume
+// then `setxkbmap -layout jaume,us -option grp:rctrl_rshift_toggle -option compose:menu`
+// or just `setxkbmap -layout jaume` or whatever
+// needs normal norman installed
+
+default  partial alphanumeric_keys
+xkb_symbols "basic" {
+
+    name[Group1]= "English (Norman international AltGr dead keys)";
+
+    include "us(altgr-intl)"
+    include "us(norman)"
+    key <LSGT> { [ less,	greater,		backslash,	bar ] };
+    key <AE04> { [	   4,     dollar,      asciitilde,         sterling ] };
+
+    key <CAPS> { [ Escape ] };
+
+    include "level3(ralt_switch)"
+};
